@@ -1,5 +1,3 @@
-# Algoritmo de Caminho Mínimo
-
 def CM( atual, pai, dist, destino ):
     if ( atual == destino ):
         print (dist)
