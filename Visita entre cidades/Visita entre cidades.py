@@ -1,14 +1,10 @@
 def CM( atual, pai, dist, destino ):
     if ( atual == destino ):
         print (dist)
-        return True
-
+        
     for [c,d] in g[atual]:
         if ( c != pai ):
-            if ( CM( c, atual, dist + d, destino ) ):
-                return True
-
-    return False
+            CM( c, atual, dist + d, destino )
             
 [N, A, B] = [int(c) for c in input().split()]
 
