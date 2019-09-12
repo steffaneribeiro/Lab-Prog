@@ -3,7 +3,7 @@ def BEP(atual,pai,destino,distancia):
         print(distancia)
     for [i,j] in A[atual]:
         if ( i != pai ):
-          BEP(i,atual,destino,distancia+j+1 )
+          BEP(i,atual,destino,distancia+j)
 
 [n,origem,destino]=[int(x)for x in input().split()]
 A= [[] for i in range(n+1)]
@@ -13,4 +13,4 @@ for i in range(1,n):
     A[P].append( [Q, D] )
     A[Q].append( [P, D] )
 
-BEP(origem-1,None,destino-1,0)
+BEP(origem,None,destino,0)
