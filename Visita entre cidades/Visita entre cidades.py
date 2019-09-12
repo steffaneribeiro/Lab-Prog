@@ -1,18 +1,16 @@
-def CM( atual, pai, dist, destino ):
-    if ( atual == destino ):
-        print (dist)
-        
-    for [c,d] in g[atual]:
-        if ( c != pai ):
-            CM( c, atual, dist + d, destino )
-            
-[N, A, B] = [int(c) for c in input().split()]
+def BEP(atual,pai,destino,distancia):
+    if atual==destino:
+        print(distancia)
+    for [i,j] in A[atual]:
+        if ( i != pai ):
+          BEP(i,atual,destino,distancia+j+1 )
 
-g = [[] for i in range(N+1)]
+[n,origem,destino]=[int(x)for x in input().split()]
+A= [[] for i in range(n+1)]
 
-for i in range(1,N):
+for i in range(1,n):
     [P, Q, D] = [int(c) for c in input().split()]
-    g[P].append( [Q, D] )
-    g[Q].append( [P, D] )
+    A[P].append( [Q, D] )
+    A[Q].append( [P, D] )
 
-CM( A, -1, 0, B )
+BEP(origem-1,None,destino-1,0)
