@@ -1,0 +1,16 @@
+def BEP(atual,pai,destino,distancia):
+    if atual==destino:
+        print(distancia)
+    for [i,j] in A[atual]:
+        if ( i != pai ):
+          BEP(i,atual,destino,distancia+j)
+
+[n,m]=[int(x)for x in input().split()]
+S= [[] for i in range(n+1)]
+
+for i in range(1,m):
+    [A, B, C] = [int(c) for c in input().split()]
+    S[A].append( [B, C] )
+    S[B].append( [A, C] )
+
+BEP(1,None,(n-1),0)
